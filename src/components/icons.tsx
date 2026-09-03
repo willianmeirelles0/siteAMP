@@ -4,6 +4,17 @@ type IconProps = {
 
 /** Ícones de traço fino usados nos cards de pilares/serviços. */
 
+export function IconWorkflow({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.2} className={className}>
+      <circle cx="5.5" cy="6" r="2.2" />
+      <circle cx="5.5" cy="18" r="2.2" />
+      <circle cx="18.5" cy="12" r="2.2" />
+      <path d="M7.5 6.8 16.7 11M7.5 17.2 16.7 13" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function IconCompass({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.2} className={className}>
@@ -86,6 +97,15 @@ export function IconCheck({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.4} className={className}>
       <path d="m4.5 12.5 4.5 4.5 10-11" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function IconPlay({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.2} className={className}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M10.3 8.8v6.4l5.4-3.2-5.4-3.2Z" strokeLinejoin="round" fill="currentColor" stroke="none" />
     </svg>
   );
 }

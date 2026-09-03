@@ -1,11 +1,11 @@
 import Reveal from "./Reveal";
 import { IconCompass, IconChart, IconSpark, IconInfinity } from "./icons";
 
-/** Missão institucional — ajustar redação fina conforme posicionamento final. */
+/** Missão institucional, ajustar redação fina conforme posicionamento final. */
 const missao =
-  "Existimos para transformar marcas em referências de mercado, unindo estratégia, dados e sensibilidade criativa em cada decisão. Acreditamos em resultado com identidade — performance que não custa a sofisticação da marca.";
+  "Existimos para transformar marcas em referências de mercado, unindo estratégia, dados e sensibilidade criativa em cada decisão.";
 
-/** Pilares/diferenciais — editar títulos e descrições conforme necessário. */
+/** Pilares/diferenciais, editar títulos e descrições conforme necessário. */
 const pilares = [
   {
     icon: IconCompass,
@@ -17,7 +17,7 @@ const pilares = [
     icon: IconChart,
     titulo: "Performance com transparência",
     descricao:
-      "Decisões orientadas por dados, com relatórios claros — você sempre sabe onde o investimento está gerando retorno.",
+      "Decisões orientadas por dados, com relatórios claros: você sempre sabe onde o investimento está gerando retorno.",
   },
   {
     icon: IconSpark,
@@ -29,7 +29,7 @@ const pilares = [
     icon: IconInfinity,
     titulo: "Parceria de longo prazo",
     descricao:
-      "Atuamos como extensão do seu time, acompanhando cada fase do crescimento — não como um fornecedor pontual.",
+      "Atuamos como extensão do seu time, acompanhando cada fase do crescimento, e não como um fornecedor pontual.",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function SobreAmp() {
       <div className="mx-auto max-w-content px-6 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="block font-sans text-xs uppercase tracking-widest2 text-amp-sand">
-            Sobre a AMP Andrioli
+            Sobre a Andrioli Marketing & Performance
           </span>
           <h2 className="mt-4 font-display text-3xl font-medium leading-snug text-amp-cream sm:text-4xl">
             {missao}

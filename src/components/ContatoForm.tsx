@@ -4,6 +4,7 @@ import { useId, useState } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import {
+  buildWhatsappMessage,
   initialContactValues,
   OPCOES_INTERESSE,
   SERVICOS_PONTUAIS,
@@ -11,6 +12,7 @@ import {
   type ContactPayload,
   type ServicoPontual,
 } from "@/lib/contact";
+import { whatsappHref } from "@/lib/site-config";
 
 const inputClass =
   "w-full rounded-sm border border-amp-wine/15 bg-white/70 px-4 py-3 font-sans text-sm text-amp-ink placeholder:text-amp-ink/35 outline-none transition-colors duration-300 focus:border-amp-wine";
@@ -24,6 +26,7 @@ export default function ContatoForm() {
   const [values, setValues] = useState<ContactPayload>(initialContactValues);
   const [errors, setErrors] = useState<ContactErrors>({});
   const [status, setStatus] = useState<Status>("idle");
+  const [whatsappUrl, setWhatsappUrl] = useState<string | null>(null);
 
   function update<K extends keyof ContactPayload>(field: K, value: ContactPayload[K]) {
     setValues((v) => ({ ...v, [field]: value }));
@@ -43,6 +46,10 @@ export default function ContatoForm() {
     setStatus("submitting");
     setErrors({});
 
+    // Abre a aba em branco já no clique (gesto do usuário), para o
+    // navegador não bloquear o pop-up quando o fetch abaixo terminar.
+    const whatsappTab = window.open("", "_blank");
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -52,14 +59,22 @@ export default function ContatoForm() {
       const data: { ok: boolean; errors?: ContactErrors } = await response.json();
 
       if (!response.ok || !data.ok) {
+        whatsappTab?.close();
         setErrors(data.errors ?? { form: "Não foi possível enviar. Revise os campos e tente novamente." });
         setStatus("error");
         return;
       }
 
+      const href = whatsappHref(buildWhatsappMessage(values));
+      setWhatsappUrl(href);
+      if (whatsappTab) {
+        whatsappTab.location.href = href;
+      }
+
       setStatus("success");
       setValues(initialContactValues);
     } catch {
+      whatsappTab?.close();
       setErrors({ form: "Não foi possível enviar sua mensagem. Tente novamente em instantes." });
       setStatus("error");
     }
@@ -70,12 +85,25 @@ export default function ContatoForm() {
       <div className="rounded-sm border border-amp-wine/15 bg-white/70 p-10 text-center">
         <h3 className="font-display text-2xl font-medium text-amp-ink">Mensagem enviada</h3>
         <p className="mt-3 font-sans text-sm font-light leading-relaxed text-amp-ink/70">
-          Obrigado pelo contato! Nossa equipe vai responder em breve.
+          Abrimos o WhatsApp com todas as suas respostas preenchidas. Se a janela não abriu, use o botão abaixo.
         </p>
+        {whatsappUrl && (
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-block rounded-full bg-amp-wine px-6 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-cream transition-colors duration-300 hover:bg-amp-wine-dark"
+          >
+            Abrir WhatsApp
+          </a>
+        )}
         <button
           type="button"
-          onClick={() => setStatus("idle")}
-          className="mt-6 rounded-full bg-amp-wine px-6 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-cream transition-colors duration-300 hover:bg-amp-wine-dark"
+          onClick={() => {
+            setStatus("idle");
+            setWhatsappUrl(null);
+          }}
+          className="mt-4 block w-full font-sans text-xs uppercase tracking-widest2 text-amp-wine/60 underline underline-offset-2 hover:text-amp-wine"
         >
           Enviar outra mensagem
         </button>
@@ -247,7 +275,7 @@ export default function ContatoForm() {
         disabled={status === "submitting"}
         className="w-full rounded-full bg-amp-wine px-6 py-3.5 text-sm font-medium uppercase tracking-widest2 text-amp-cream transition-colors duration-300 hover:bg-amp-wine-dark disabled:opacity-60 sm:w-auto"
       >
-        {status === "submitting" ? "Enviando..." : "Enviar mensagem"}
+        {status === "submitting" ? "Enviando..." : "Enviar para o WhatsApp"}
       </button>
     </form>
   );

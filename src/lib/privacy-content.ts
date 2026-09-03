@@ -8,7 +8,7 @@ export const privacySections: { titulo: string; paragrafos: string[] }[] = [
   {
     titulo: "1. Introdução",
     paragrafos: [
-      "A AMP Andrioli, Marketing & Performance (\"AMP Andrioli\", \"nós\") respeita a sua privacidade e está comprometida em proteger os dados pessoais dos visitantes e clientes deste site, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).",
+      "A AMP Andrioli, Marketing & Performance (\"AMP Andrioli\", \"nós\") respeita a sua privacidade e está comprometida em proteger os dados pessoais dos visitantes e clientes deste site, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, LGPD).",
       "Esta Política de Privacidade explica quais dados coletamos, como os utilizamos, com quem podemos compartilhá-los e quais são os seus direitos como titular de dados.",
     ],
   },
@@ -22,7 +22,7 @@ export const privacySections: { titulo: string; paragrafos: string[] }[] = [
     titulo: "3. Quais dados coletamos",
     paragrafos: [
       "Dados fornecidos voluntariamente: nome, e-mail, telefone, empresa e mensagem, quando você preenche o formulário de contato.",
-      "Dados de navegação: endereço IP, tipo de dispositivo e navegador, páginas visitadas e tempo de permanência, coletados por meio de cookies e tecnologias semelhantes — sempre respeitando as preferências definidas no banner de cookies.",
+      "Dados de navegação: endereço IP, tipo de dispositivo e navegador, páginas visitadas e tempo de permanência, coletados por meio de cookies e tecnologias semelhantes, sempre respeitando as preferências definidas no banner de cookies.",
     ],
   },
   {

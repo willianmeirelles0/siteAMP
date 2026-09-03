@@ -13,10 +13,10 @@ const config: Config = {
     extend: {
       colors: {
         amp: {
-          // Bordô/vinho profundo — cor de fundo dominante
-          wine: "#67010A",
-          "wine-dark": "#4A0107",
-          "wine-light": "#7E0710",
+          // Bordô/vinho profundo, cor de fundo dominante
+          wine: "#5A1420",
+          "wine-dark": "#3D0E16",
+          "wine-light": "#71202D",
           // Off-white — texto sobre fundo escuro
           cream: "#F8F5F1",
           // Bege — acentos e detalhes

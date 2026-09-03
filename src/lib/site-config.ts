@@ -1,11 +1,11 @@
 /**
- * Configuração central do site — edite aqui números, links e textos
+ * Configuração central do site, edite aqui números, links e textos
  * que se repetem em múltiplos componentes.
  */
 export const siteConfig = {
   name: "AMP Andrioli",
   fullName: "AMP Andrioli, Marketing & Performance",
-  slogan: "Estratégia que conecta • Performance que transforma • Resultados que perduram",
+  slogan: "Conteúdo constrói relacionamentos • Relacionamento gera confiança • Confiança gera receita",
   // TODO: substituir pelo número real em formato internacional, ex. "5511999999999"
   whatsappNumber: "5511999999999",
   whatsappMessage: "Olá! Gostaria de saber mais sobre os serviços da AMP Andrioli.",

@@ -1,8 +1,8 @@
 import Reveal from "./Reveal";
 import WhatsappButton from "./WhatsappButton";
-import { IconTarget, IconMegaphone, IconLayers, IconFeather, IconCompass } from "./icons";
+import { IconTarget, IconMegaphone, IconWorkflow, IconFeather, IconCompass } from "./icons";
 
-/** Lista de serviços — editar títulos/descrições conforme portfólio final. */
+/** Lista de serviços, editar títulos/descrições conforme portfólio final. */
 const servicos = [
   {
     icon: IconTarget,
@@ -17,25 +17,25 @@ const servicos = [
       "Planejamento, produção e gestão de redes sociais com identidade visual consistente e calendário editorial estratégico.",
   },
   {
-    icon: IconLayers,
-    titulo: "Branding",
+    icon: IconWorkflow,
+    titulo: "CRM",
     descricao:
-      "Construção e reposicionamento de marca — identidade visual, tom de voz e posicionamento claro de mercado.",
+      "Organização de fluxos de atendimento, automação de mensagens e gestão de relacionamento com o cliente, para transformar contatos em vendas recorrentes.",
   },
   {
     icon: IconFeather,
     titulo: "Produção de Conteúdo",
     descricao:
-      "Fotografia, vídeo e copywriting sob medida para comunicar a essência da marca em cada ponto de contato.",
+      "Roteirização, captação e edição em duas versões: mobile e câmera profissional (Sony FX30), para cada formato de conteúdo.",
   },
 ];
 
-/** Serviço em destaque — tratado como card de largura total. */
+/** Serviço em destaque, tratado como card de largura total. */
 const consultoria = {
   icon: IconCompass,
   titulo: "Consultoria Estratégica",
   descricao:
-    "Diagnóstico completo e plano de ação personalizado para marcas que buscam clareza de rumo antes de investir em execução.",
+    "Diagnóstico completo para marcas que buscam clareza estratégica. Um plano de ação personalizado antes de investir em execução.",
 };
 
 export default function Servicos() {
@@ -50,7 +50,7 @@ export default function Servicos() {
             Onde a estratégia vira execução
           </h2>
           <p className="mt-4 font-sans text-base font-light leading-relaxed text-amp-ink/70">
-            Soluções sob medida — isoladas ou combinadas — para cada momento da sua marca.
+            Soluções sob medida, isoladas ou combinadas, para cada momento da sua marca.
           </p>
         </Reveal>
 

@@ -3,31 +3,25 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Reveal from "./Reveal";
-import { IconChevronLeft, IconChevronRight } from "./icons";
+import { IconChevronLeft, IconChevronRight, IconPlay } from "./icons";
+
+type Depoimento = {
+  tipo: "video" | "imagem";
+  /** Caminho em public/videos ou public/images, formato vertical 1080x1920 */
+  src?: string;
+  nome: string;
+  empresa: string;
+};
 
 /**
- * Depoimentos de clientes — placeholder. Substituir pelos depoimentos
- * reais assim que disponíveis.
+ * Depoimentos em vídeo/print (clientes falando em áudio, como narração),
+ * formato vertical 1080x1920. Adicionar os arquivos em public/videos ou
+ * public/images e preencher `src` de cada item abaixo.
  */
-const depoimentos = [
-  {
-    nome: "Cliente AMP Andrioli",
-    empresa: "Empresa — [substituir]",
-    texto:
-      "A AMP Andrioli entendeu nossa marca antes mesmo de propor qualquer campanha. O resultado foi um posicionamento muito mais claro e um crescimento consistente em vendas.",
-  },
-  {
-    nome: "Cliente AMP Andrioli",
-    empresa: "Empresa — [substituir]",
-    texto:
-      "Profissionalismo do início ao fim. Os relatórios de performance são claros e a comunicação é constante — sentimos que temos um time de marketing próprio.",
-  },
-  {
-    nome: "Cliente AMP Andrioli",
-    empresa: "Empresa — [substituir]",
-    texto:
-      "Trocamos de agência depois de experiências frustrantes e a diferença foi enorme. Estratégia, sofisticação visual e atenção aos detalhes em cada entrega.",
-  },
+const depoimentos: Depoimento[] = [
+  { tipo: "video", nome: "Cliente AMP Andrioli", empresa: "Empresa, substituir" },
+  { tipo: "video", nome: "Cliente AMP Andrioli", empresa: "Empresa, substituir" },
+  { tipo: "video", nome: "Cliente AMP Andrioli", empresa: "Empresa, substituir" },
 ];
 
 export default function Depoimentos() {
@@ -64,7 +58,7 @@ export default function Depoimentos() {
           </h2>
         </Reveal>
 
-        <div className="relative mx-auto mt-14 flex max-w-2xl items-center gap-4 sm:gap-8">
+        <div className="relative mx-auto mt-14 flex max-w-md items-center gap-4 sm:gap-8">
           <button
             type="button"
             onClick={() => goTo(index - 1)}
@@ -74,25 +68,45 @@ export default function Depoimentos() {
             <IconChevronLeft className="h-4 w-4" />
           </button>
 
-          <div className="relative min-h-[220px] flex-1 overflow-hidden">
+          <div className="relative aspect-[9/16] w-full max-w-[300px] flex-1 overflow-hidden rounded-md">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={index}
                 custom={direction}
-                initial={{ opacity: 0, x: direction * 24 }}
+                initial={{ opacity: 0, x: direction * 40 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: direction * -24 }}
+                exit={{ opacity: 0, x: direction * -40 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="text-center"
+                className="absolute inset-0"
               >
-                <p className="font-display text-xl italic leading-relaxed text-amp-cream sm:text-2xl">
-                  &ldquo;{atual.texto}&rdquo;
-                </p>
-                <div className="mt-8 flex flex-col items-center gap-1">
-                  <span className="font-sans text-sm font-medium text-amp-sand">
+                {atual.src ? (
+                  atual.tipo === "video" ? (
+                    <video
+                      src={atual.src}
+                      className="h-full w-full object-cover"
+                      controls
+                      playsInline
+                    />
+                  ) : (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={atual.src} alt={`Depoimento de ${atual.nome}`} className="h-full w-full object-cover" />
+                  )
+                ) : (
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-3 border border-amp-cream/20 bg-amp-cream/[0.05] px-6 text-center">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full border border-amp-sand/50 text-amp-sand">
+                      <IconPlay className="h-5 w-5" />
+                    </span>
+                    <span className="font-sans text-xs uppercase tracking-widest2 text-amp-cream/50">
+                      Vídeo do cliente, adicionar em public/videos
+                    </span>
+                  </div>
+                )}
+
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-amp-wine-dark/90 to-transparent px-5 pb-5 pt-10">
+                  <span className="block font-sans text-sm font-medium text-amp-cream">
                     {atual.nome}
                   </span>
-                  <span className="font-sans text-xs uppercase tracking-widest2 text-amp-cream/50">
+                  <span className="block font-sans text-xs uppercase tracking-widest2 text-amp-cream/60">
                     {atual.empresa}
                   </span>
                 </div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import WhatsappButton from "./WhatsappButton";
+import { siteConfig } from "@/lib/site-config";
 
 export default function Hero() {
   return (
@@ -36,7 +37,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
           className="max-w-3xl font-display text-4xl font-medium leading-tight text-amp-cream sm:text-5xl md:text-6xl"
         >
-          Estratégia e sofisticação a serviço do crescimento da sua marca
+          Atendimento Próximo e Execução de Alta Performance
         </motion.h1>
 
         <motion.p
@@ -55,7 +56,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-4 font-script text-2xl text-amp-sand sm:text-3xl"
         >
-          Estratégia que conecta • Performance que transforma • Resultados que perduram
+          {siteConfig.slogan}
         </motion.p>
 
         <motion.div

@@ -58,18 +58,18 @@ src/
 
 - `src/lib/site-config.ts`: número de WhatsApp, e-mail, Instagram, LinkedIn, URL do site.
 - `tailwind.config.ts`: cores (`amp.wine`, `amp.cream`, `amp.sand`, `amp.ink`) e fontes.
-- `src/components/Sobre.tsx`: bio da fundadora (objeto `fundadora` no topo do arquivo) e foto — adicionar em `public/images` e trocar o bloco placeholder por `<Image />`.
+- `src/components/Sobre.tsx`: bio da fundadora (objeto `fundadora` no topo do arquivo) e foto, adicionar em `public/images` e trocar o bloco placeholder por `<Image />`.
 - `src/components/SobreAmp.tsx`: texto de missão (`missao`) e os 3-4 pilares/diferenciais (`pilares`).
-- `src/components/Servicos.tsx`: lista `servicos` e o serviço em destaque `consultoria`.
-- `src/components/Mentoria.tsx`: lista `beneficios` e depoimentos de mentorados (`mentorados` — placeholders a substituir por casos reais).
-- `src/components/Depoimentos.tsx`: array `depoimentos` — substituir pelos depoimentos reais de clientes.
-- `src/lib/privacy-content.ts`: texto-base da Política de Privacidade — **revisar com jurídico especializado em LGPD** antes de publicar; preencher os campos entre `[colchetes]` (razão social, CNPJ, e-mail do encarregado/DPO, data de atualização).
+- `src/components/Servicos.tsx`: lista `servicos` e o serviço em destaque `consultoria`. Ao alterar, atualizar também `SERVICOS_PONTUAIS` em `src/lib/contact.ts` para manter o formulário de contato sincronizado.
+- `src/components/Mentoria.tsx`: entregáveis por categoria (`categorias`), badges (`duracao`/`cadencia`) e foto, adicionar em `public/images` e trocar o bloco placeholder por `<Image />`.
+- `src/components/Depoimentos.tsx`: array `depoimentos` (formato vertical 1080x1920). Adicionar os arquivos em `public/videos` ou `public/images` e preencher o campo `src` de cada item.
+- `src/lib/privacy-content.ts`: texto-base da Política de Privacidade, **revisar com jurídico especializado em LGPD** antes de publicar; preencher os campos entre `[colchetes]` (razão social, CNPJ, e-mail do encarregado/DPO, data de atualização).
 
 ## Integrações pendentes
 
-- **E-mail do formulário de contato**: `src/app/api/contact/route.ts` já valida os campos no servidor; falta plugar um provedor (ex. [Resend](https://resend.com)) no bloco `TODO` marcado no arquivo. Variáveis sugeridas: `RESEND_API_KEY`, `CONTACT_TO_EMAIL` (ver `.env.example`).
+- **E-mail do formulário de contato**: `src/app/api/contact/route.ts` já valida os campos no servidor; falta plugar um provedor (ex. [Resend](https://resend.com)) no bloco `TODO` marcado no arquivo. Variáveis sugeridas: `RESEND_API_KEY`, `CONTACT_TO_EMAIL` (ver `.env.example`). Hoje, ao enviar, o formulário já monta uma mensagem com todas as respostas e abre o WhatsApp automaticamente (`buildWhatsappMessage` em `src/lib/contact.ts`).
 - **Google Tag / Meta Pixel**: `src/components/Analytics.tsx` já carrega os scripts somente após consentimento do `CookieBanner`, mas só se `NEXT_PUBLIC_GA_MEASUREMENT_ID` / `NEXT_PUBLIC_META_PIXEL_ID` estiverem definidos (ver `.env.example`).
-- **Fotos reais**: adicionar em `public/images` (foto da fundadora, imagens de depoimentos, etc.) e trocar os blocos de placeholder pelos componentes `<Image />` do Next.
+- **Fotos e vídeos reais**: adicionar em `public/images`/`public/videos` (foto da fundadora, foto da mentoria, vídeos de depoimentos, etc.) e trocar os blocos de placeholder pelos componentes `<Image />`/`<video>` correspondentes.
 
 ## Progresso
 

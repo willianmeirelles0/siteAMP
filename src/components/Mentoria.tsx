@@ -2,32 +2,61 @@ import Reveal from "./Reveal";
 import WhatsappButton from "./WhatsappButton";
 import { IconCheck } from "./icons";
 
-/** Proposta da mentoria — ajustar conforme o formato final do programa. */
-const beneficios = [
-  "Encontros individuais com a fundadora da AMP Andrioli",
-  "Plano de ação personalizado para o seu momento de negócio",
-  "Acesso direto via WhatsApp entre os encontros",
-  "Templates e frameworks exclusivos de estratégia e performance",
+const duracao = "6 meses de mentoria";
+const cadencia = "Encontro mensal · 2h a 3h";
+
+/** Entregáveis da mentoria, editar conforme o formato final do programa. */
+const categorias = [
+  {
+    titulo: "Em cada encontro",
+    itens: [
+      "Análise do mês anterior",
+      "Planejamento estratégico do próximo mês",
+      "Definição dos conteúdos",
+      "Definição da linha editorial",
+      "Ideias de campanhas",
+      "Ações comerciais",
+      "Posicionamento",
+      "Ajustes conforme resultados",
+    ],
+  },
+  {
+    titulo: "Durante o mês",
+    itens: [
+      "Grupo de WhatsApp",
+      "Correção de conteúdos",
+      "Feedback de vídeos",
+      "Tirar dúvidas",
+      "Sugestões de melhorias",
+    ],
+  },
+  {
+    titulo: "Produção de conteúdo",
+    itens: [
+      "Como aparecer diante das câmeras",
+      "Storytelling",
+      "Roteiros",
+      "Organização do Instagram",
+      "Equipamentos ideais",
+      "Iluminação",
+      "Enquadramentos",
+      "Tipos de vídeos",
+      "Como criar artes",
+      "Canva",
+    ],
+  },
+  {
+    titulo: "Estratégia & vendas",
+    itens: [
+      "Como impulsionar conteúdos",
+      "Noções de Meta Ads",
+      "Como analisar métricas",
+      "Estratégias para vender mais",
+    ],
+  },
 ];
 
-/**
- * Prova social de mentorados — placeholder. Substituir por depoimentos
- * reais assim que disponíveis.
- */
-const mentorados = [
-  {
-    nome: "Cliente Mentorado",
-    cargo: "Empreendedora(o) — [substituir]",
-    depoimento:
-      "A mentoria trouxe clareza para as minhas decisões de marketing. Saí de cada encontro com direção prática, não só teoria.",
-  },
-  {
-    nome: "Cliente Mentorado",
-    cargo: "Fundador(a) de marca — [substituir]",
-    depoimento:
-      "Finalmente entendi como ler os números da minha operação e priorizar onde investir. Recomendo para quem quer pensar estrategicamente.",
-  },
-];
+const fechamento = "Ideal para quem quer aprender a operar por dentro do próprio negócio, com direção mensal.";
 
 export default function Mentoria() {
   return (
@@ -44,22 +73,18 @@ export default function Mentoria() {
             <p className="mt-5 font-sans text-base font-light leading-relaxed text-amp-ink/75">
               Um espaço individual de acompanhamento para empreendedores e
               profissionais de marketing que querem sair do operacional e
-              assumir decisões estratégicas com mais confiança — com a
+              assumir decisões estratégicas com mais confiança, com a
               experiência da AMP Andrioli como guia.
             </p>
 
-            <ul className="mt-8 space-y-4">
-              {beneficios.map((beneficio) => (
-                <li key={beneficio} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amp-wine text-amp-cream">
-                    <IconCheck className="h-3 w-3" />
-                  </span>
-                  <span className="font-sans text-sm font-light leading-relaxed text-amp-ink/80">
-                    {beneficio}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <span className="rounded-full border border-amp-wine/25 px-4 py-2 font-sans text-xs uppercase tracking-widest2 text-amp-wine">
+                {duracao}
+              </span>
+              <span className="rounded-full border border-amp-wine/25 px-4 py-2 font-sans text-xs uppercase tracking-widest2 text-amp-wine">
+                {cadencia}
+              </span>
+            </div>
 
             <WhatsappButton
               variant="dark"
@@ -70,32 +95,47 @@ export default function Mentoria() {
             </WhatsappButton>
           </Reveal>
 
-          <Reveal delay={0.15} className="flex flex-col gap-6">
-            {mentorados.map((mentorado) => (
-              <div
-                key={mentorado.depoimento.slice(0, 20)}
-                className="rounded-sm border border-amp-wine/15 bg-amp-cream p-8"
-              >
-                <p className="font-display text-lg italic leading-relaxed text-amp-ink/90">
-                  &ldquo;{mentorado.depoimento}&rdquo;
-                </p>
-                <div className="mt-6 flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-amp-wine/10 font-display text-sm text-amp-wine">
-                    {mentorado.nome.charAt(0)}
-                  </span>
-                  <div>
-                    <p className="font-sans text-sm font-medium text-amp-ink">
-                      {mentorado.nome}
-                    </p>
-                    <p className="font-sans text-xs uppercase tracking-widest2 text-amp-ink/50">
-                      {mentorado.cargo}
-                    </p>
-                  </div>
-                </div>
+          <Reveal delay={0.15}>
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-sm border border-amp-wine/15 bg-amp-cream sm:max-w-md">
+              {/* Placeholder até a foto real ser adicionada em public/images */}
+              <div className="flex h-full w-full flex-col items-center justify-center gap-3 px-6 text-center">
+                <span className="font-script text-4xl text-amp-wine/70">Jéssica</span>
+                <span className="font-sans text-xs uppercase tracking-widest2 text-amp-wine/50">
+                  Foto da mentoria, substituir em public/images
+                </span>
               </div>
-            ))}
+              <div className="pointer-events-none absolute inset-3 border border-amp-wine/20" />
+            </div>
           </Reveal>
         </div>
+
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {categorias.map((categoria, index) => (
+            <Reveal key={categoria.titulo} delay={index * 0.1}>
+              <div className="h-full rounded-sm border border-amp-wine/15 bg-amp-cream p-8">
+                <h3 className="font-display text-lg font-medium text-amp-wine">
+                  {categoria.titulo}
+                </h3>
+                <ul className="mt-4 space-y-2.5">
+                  {categoria.itens.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-amp-wine/10 text-amp-wine">
+                        <IconCheck className="h-2.5 w-2.5" />
+                      </span>
+                      <span className="font-sans text-sm font-light leading-snug text-amp-ink/80">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={0.2} className="mt-12 text-center">
+          <p className="font-display text-lg italic text-amp-wine/80">{fechamento}</p>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,6 +1,5 @@
 import Reveal from "./Reveal";
 import ContatoForm from "./ContatoForm";
-import { siteConfig } from "@/lib/site-config";
 
 export default function Contato() {
   return (
@@ -11,11 +10,10 @@ export default function Contato() {
             Contato
           </span>
           <h2 className="mt-4 font-display text-3xl font-medium text-amp-ink sm:text-4xl">
-            Vamos construir o próximo capítulo da sua marca
+            Vamos elevar o nível da sua empresa
           </h2>
           <p className="mt-4 font-sans text-base font-light leading-relaxed text-amp-ink/70">
-            Preencha o formulário abaixo ou fale diretamente pelo WhatsApp em{" "}
-            <span className="text-amp-wine">{siteConfig.email}</span>.
+            Preencha o formulário abaixo e clique para enviar a mensagem para o WhatsApp com todas as respostas.
           </p>
         </Reveal>
 
