@@ -46,7 +46,7 @@ export default function Sobre() {
             {fundadora.introducao}
           </p>
 
-          <div className="mt-6 space-y-4 font-display text-base italic leading-relaxed text-amp-ink/80">
+          <div className="mt-6 space-y-4 font-display text-lg italic leading-relaxed text-amp-ink/80">
             {fundadora.fala.map((paragrafo, index) => (
               <p key={paragrafo.slice(0, 24)}>
                 {index === 0 && "“"}
