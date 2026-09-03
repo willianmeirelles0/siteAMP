@@ -81,3 +81,11 @@ export function IconMegaphone({ className }: IconProps) {
     </svg>
   );
 }
+
+export function IconCheck({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.4} className={className}>
+      <path d="m4.5 12.5 4.5 4.5 10-11" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}

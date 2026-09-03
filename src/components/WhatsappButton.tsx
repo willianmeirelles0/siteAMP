@@ -4,7 +4,13 @@ import clsx from "clsx";
 import { whatsappHref } from "@/lib/site-config";
 
 type WhatsappButtonProps = {
-  variant?: "solid" | "outline" | "fab";
+  /**
+   * "solid": bege sobre fundo bordô (padrão, ex. Hero/Header).
+   * "dark": bordô sobre fundo claro (ex. seções com fundo bege/off-white).
+   * "outline": contorno claro, usado sobre fundo bordô.
+   * "fab": botão flutuante fixo.
+   */
+  variant?: "solid" | "dark" | "outline" | "fab";
   message?: string;
   className?: string;
   children?: React.ReactNode;
@@ -43,8 +49,6 @@ export default function WhatsappButton({
     );
   }
 
-  const isOutline = variant === "outline";
-
   return (
     <a
       href={href}
@@ -52,9 +56,10 @@ export default function WhatsappButton({
       rel="noopener noreferrer"
       className={clsx(
         "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-300",
-        isOutline
-          ? "border border-amp-cream/70 text-amp-cream hover:bg-amp-cream hover:text-amp-wine"
-          : "bg-amp-sand text-amp-wine hover:bg-amp-cream",
+        variant === "outline" &&
+          "border border-amp-cream/70 text-amp-cream hover:bg-amp-cream hover:text-amp-wine",
+        variant === "dark" && "bg-amp-wine text-amp-cream hover:bg-amp-wine-dark",
+        variant === "solid" && "bg-amp-sand text-amp-wine hover:bg-amp-cream",
         className,
       )}
     >
