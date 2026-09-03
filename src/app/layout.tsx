@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { cormorant, allura, inter } from "@/lib/fonts";
 import { siteConfig } from "@/lib/site-config";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import WhatsappButton from "@/components/WhatsappButton";
+import CookieBanner from "@/components/CookieBanner";
+import { CookieConsentProvider } from "@/components/CookieConsentContext";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -52,7 +58,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${cormorant.variable} ${allura.variable} ${inter.variable} scroll-smooth`}
     >
       <body className="flex min-h-screen flex-col bg-amp-cream font-sans text-amp-ink antialiased">
-        {children}
+        <CookieConsentProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <WhatsappButton variant="fab" />
+          <CookieBanner />
+          <Analytics />
+        </CookieConsentProvider>
       </body>
     </html>
   );
