@@ -1,4 +1,4 @@
-# AMP Andrioli — Marketing & Performance
+# Andrioli Marketing & Performance (AMP)
 
 Site institucional em Next.js (App Router) + TypeScript + Tailwind CSS.
 
@@ -34,7 +34,7 @@ src/
     Header.tsx               # header fixo, menu mobile em tela cheia
     Hero.tsx                  # seção hero
     Sobre.tsx                  # seção "Sobre a fundadora"
-    SobreAmp.tsx                 # seção "Sobre a AMP Andrioli" (missão + pilares)
+    SobreAmp.tsx                 # seção "Sobre a Andrioli Marketing & Performance" (missão + pilares)
     Servicos.tsx                   # seção "Serviços" (grid de cards + consultoria em destaque)
     Mentoria.tsx                     # seção "Mentoria de Marketing" (fundo bege)
     Depoimentos.tsx                    # carrossel de depoimentos
@@ -57,7 +57,7 @@ src/
 ## Configuração rápida (placeholders a editar)
 
 - `src/lib/site-config.ts`: número de WhatsApp, e-mail, Instagram, LinkedIn, URL do site.
-- `tailwind.config.ts`: cores (`amp.wine`, `amp.cream`, `amp.sand`, `amp.ink`) e fontes.
+- `tailwind.config.ts`: cores (`amp.wine` #3B0408 fixo em todas as seções, `amp.gold` para molduras/botões vazados, `amp.cream`, `amp.sand`, `amp.ink`) e fontes. Nomes usados no site: apenas "AMP" ou "Andrioli Marketing & Performance" (nunca "AMP Andrioli" combinados) — ver `siteConfig.name`/`siteConfig.fullName`.
 - `src/components/Sobre.tsx`: bio da fundadora (objeto `fundadora` no topo do arquivo) e foto, adicionar em `public/images` e trocar o bloco placeholder por `<Image />`.
 - `src/components/SobreAmp.tsx`: texto de missão (`missao`) e os 3-4 pilares/diferenciais (`pilares`).
 - `src/components/Servicos.tsx`: lista `servicos` e o serviço em destaque `consultoria`. Ao alterar, atualizar também `SERVICOS_PONTUAIS` em `src/lib/contact.ts` para manter o formulário de contato sincronizado.
@@ -75,7 +75,7 @@ src/
 
 - [x] Estrutura de pastas, Tailwind config (paleta/tipografia), Header, Hero
 - [x] Sobre a fundadora
-- [x] Sobre a AMP Andrioli (missão + pilares)
+- [x] Sobre a Andrioli Marketing & Performance (missão + pilares)
 - [x] Serviços
 - [x] Mentoria de Marketing
 - [x] Depoimentos

@@ -60,7 +60,7 @@ export function buildWhatsappMessage(values: ContactPayload): string {
     .join(", ");
 
   const linhas = [
-    "Olá! Vim pelo site da AMP Andrioli e gostaria de falar sobre o seguinte:",
+    "Olá! Vim pelo site da AMP e gostaria de falar sobre o seguinte:",
     "",
     `Nome: ${values.nome}`,
     `E-mail: ${values.email}`,

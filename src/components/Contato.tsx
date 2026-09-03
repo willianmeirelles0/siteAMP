@@ -13,7 +13,9 @@ export default function Contato() {
             Vamos elevar o nível da sua empresa
           </h2>
           <p className="mt-4 font-sans text-base font-light leading-relaxed text-amp-ink/70">
-            Preencha o formulário abaixo e clique para enviar a mensagem para o WhatsApp com todas as respostas.
+            Preencha o formulário abaixo e clique para enviar a mensagem
+            <br />
+            para o WhatsApp com todas as respostas.
           </p>
         </Reveal>
 

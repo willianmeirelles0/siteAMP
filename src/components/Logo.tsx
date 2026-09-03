@@ -16,7 +16,7 @@ export default function Logo({ variant = "light", className }: LogoProps) {
     <Link
       href="/#topo"
       className={clsx("group flex items-center gap-3", className)}
-      aria-label="AMP Andrioli, página inicial"
+      aria-label="AMP, página inicial"
     >
       {/* Monograma: "A" cursivo (Allura) sobreposto a "MP" serifado (Cormorant) */}
       <span className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-current/40">

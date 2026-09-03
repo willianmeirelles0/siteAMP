@@ -15,7 +15,7 @@ import {
 import { whatsappHref } from "@/lib/site-config";
 
 const inputClass =
-  "w-full rounded-sm border border-amp-wine/15 bg-white/70 px-4 py-3 font-sans text-sm text-amp-ink placeholder:text-amp-ink/35 outline-none transition-colors duration-300 focus:border-amp-wine";
+  "w-full rounded-sm border border-amp-gold/40 bg-white/70 px-4 py-3 font-sans text-sm text-amp-ink placeholder:text-amp-ink/35 outline-none transition-colors duration-300 focus:border-amp-gold";
 
 const labelClass = "block font-sans text-xs uppercase tracking-widest2 text-amp-wine/70 mb-2";
 
@@ -82,7 +82,7 @@ export default function ContatoForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-sm border border-amp-wine/15 bg-white/70 p-10 text-center">
+      <div className="rounded-sm border border-amp-gold/40 bg-white/70 p-10 text-center">
         <h3 className="font-display text-2xl font-medium text-amp-ink">Mensagem enviada</h3>
         <p className="mt-3 font-sans text-sm font-light leading-relaxed text-amp-ink/70">
           Abrimos o WhatsApp com todas as suas respostas preenchidas. Se a janela não abriu, use o botão abaixo.
@@ -92,7 +92,7 @@ export default function ContatoForm() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-block rounded-full bg-amp-wine px-6 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-cream transition-colors duration-300 hover:bg-amp-wine-dark"
+            className="mt-6 inline-block rounded-full border border-amp-gold px-6 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-wine transition-colors duration-300 hover:bg-amp-gold"
           >
             Abrir WhatsApp
           </a>
@@ -212,7 +212,7 @@ export default function ContatoForm() {
         {errors.interesse && <p className="mt-2 text-xs text-amp-wine">{errors.interesse}</p>}
 
         {values.interesse === "servicos_pontuais" && (
-          <div className="mt-4 grid grid-cols-1 gap-3 rounded-sm border border-amp-wine/10 bg-white/50 p-5 sm:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-3 rounded-sm border border-amp-gold/30 bg-white/50 p-5 sm:grid-cols-2">
             {SERVICOS_PONTUAIS.map((servico) => (
               <label
                 key={servico.value}
@@ -273,7 +273,7 @@ export default function ContatoForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full rounded-full bg-amp-wine px-6 py-3.5 text-sm font-medium uppercase tracking-widest2 text-amp-cream transition-colors duration-300 hover:bg-amp-wine-dark disabled:opacity-60 sm:w-auto"
+        className="w-full rounded-full border border-amp-gold bg-transparent px-6 py-3.5 text-sm font-medium uppercase tracking-widest2 text-amp-wine transition-colors duration-300 hover:bg-amp-gold disabled:opacity-60 sm:w-auto"
       >
         {status === "submitting" ? "Enviando..." : "Enviar para o WhatsApp"}
       </button>

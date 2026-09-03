@@ -49,8 +49,8 @@ export default function SobreAmp() {
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {pilares.map((pilar, index) => (
             <Reveal key={pilar.titulo} delay={index * 0.1}>
-              <div className="flex h-full flex-col items-start rounded-sm border border-amp-cream/15 bg-amp-cream/[0.04] p-8 transition-colors duration-300 hover:border-amp-sand/50">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-amp-sand/50 text-amp-sand">
+              <div className="flex h-full flex-col items-start rounded-sm border border-amp-gold/40 bg-amp-cream/[0.04] p-8 transition-colors duration-300 hover:border-amp-gold">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-amp-gold text-amp-gold">
                   <pilar.icon className="h-5 w-5" />
                 </span>
                 <h3 className="mt-6 font-display text-xl font-medium text-amp-cream">

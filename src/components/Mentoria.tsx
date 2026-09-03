@@ -1,6 +1,6 @@
 import Reveal from "./Reveal";
 import WhatsappButton from "./WhatsappButton";
-import { IconCheck } from "./icons";
+import { IconCheck, IconCompass, IconMegaphone, IconFeather, IconChart } from "./icons";
 
 const duracao = "6 meses de mentoria";
 const cadencia = "Encontro mensal · 2h a 3h";
@@ -8,9 +8,9 @@ const cadencia = "Encontro mensal · 2h a 3h";
 /** Entregáveis da mentoria, editar conforme o formato final do programa. */
 const categorias = [
   {
+    icon: IconCompass,
     titulo: "Em cada encontro",
     itens: [
-      "Análise do mês anterior",
       "Planejamento estratégico do próximo mês",
       "Definição dos conteúdos",
       "Definição da linha editorial",
@@ -18,9 +18,11 @@ const categorias = [
       "Ações comerciais",
       "Posicionamento",
       "Ajustes conforme resultados",
+      "Análise do mês anterior",
     ],
   },
   {
+    icon: IconMegaphone,
     titulo: "Durante o mês",
     itens: [
       "Grupo de WhatsApp",
@@ -31,6 +33,7 @@ const categorias = [
     ],
   },
   {
+    icon: IconFeather,
     titulo: "Produção de conteúdo",
     itens: [
       "Como aparecer diante das câmeras",
@@ -46,6 +49,7 @@ const categorias = [
     ],
   },
   {
+    icon: IconChart,
     titulo: "Estratégia & vendas",
     itens: [
       "Como impulsionar conteúdos",
@@ -71,17 +75,16 @@ export default function Mentoria() {
               Para quem quer aprender a pensar como estrategista
             </h2>
             <p className="mt-5 font-sans text-base font-light leading-relaxed text-amp-ink/75">
-              Um espaço individual de acompanhamento para empreendedores e
-              profissionais de marketing que querem sair do operacional e
-              assumir decisões estratégicas com mais confiança, com a
-              experiência da AMP Andrioli como guia.
+              O objetivo da mentoria é trazer mais autonomia na produção de
+              conteúdo, no posicionamento e na criação de estratégia de
+              conteúdo para a sua própria empresa.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <span className="rounded-full border border-amp-wine/25 px-4 py-2 font-sans text-xs uppercase tracking-widest2 text-amp-wine">
+              <span className="rounded-full border border-amp-gold px-4 py-2 font-sans text-xs uppercase tracking-widest2 text-amp-wine">
                 {duracao}
               </span>
-              <span className="rounded-full border border-amp-wine/25 px-4 py-2 font-sans text-xs uppercase tracking-widest2 text-amp-wine">
+              <span className="rounded-full border border-amp-gold px-4 py-2 font-sans text-xs uppercase tracking-widest2 text-amp-wine">
                 {cadencia}
               </span>
             </div>
@@ -89,14 +92,14 @@ export default function Mentoria() {
             <WhatsappButton
               variant="dark"
               className="mt-10"
-              message="Olá! Tenho interesse na Mentoria de Marketing da AMP Andrioli."
+              message="Olá! Tenho interesse na Mentoria de Marketing da AMP."
             >
               Quero ser mentorado
             </WhatsappButton>
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-sm border border-amp-wine/15 bg-amp-cream sm:max-w-md">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-sm border border-amp-gold/50 bg-amp-cream sm:max-w-md">
               {/* Placeholder até a foto real ser adicionada em public/images */}
               <div className="flex h-full w-full flex-col items-center justify-center gap-3 px-6 text-center">
                 <span className="font-script text-4xl text-amp-wine/70">Jéssica</span>
@@ -104,7 +107,7 @@ export default function Mentoria() {
                   Foto da mentoria, substituir em public/images
                 </span>
               </div>
-              <div className="pointer-events-none absolute inset-3 border border-amp-wine/20" />
+              <div className="pointer-events-none absolute inset-3 border border-amp-gold" />
             </div>
           </Reveal>
         </div>
@@ -112,8 +115,11 @@ export default function Mentoria() {
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {categorias.map((categoria, index) => (
             <Reveal key={categoria.titulo} delay={index * 0.1}>
-              <div className="h-full rounded-sm border border-amp-wine/15 bg-amp-cream p-8">
-                <h3 className="font-display text-lg font-medium text-amp-wine">
+              <div className="flex h-full flex-col items-start rounded-sm border border-amp-gold/40 bg-amp-cream p-8 transition-colors duration-300 hover:border-amp-gold">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-amp-gold text-amp-wine">
+                  <categoria.icon className="h-5 w-5" />
+                </span>
+                <h3 className="mt-6 font-display text-lg font-medium text-amp-wine">
                   {categoria.titulo}
                 </h3>
                 <ul className="mt-4 space-y-2.5">

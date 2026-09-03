@@ -68,7 +68,7 @@ export default function Hero() {
           <WhatsappButton>Fale com a gente</WhatsappButton>
           <a
             href="#contato"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-amp-cream/40 px-6 py-3 text-sm font-medium tracking-wide text-amp-cream transition-colors duration-300 hover:border-amp-cream hover:bg-amp-cream/10"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-amp-gold px-6 py-3 text-sm font-medium tracking-wide text-amp-cream transition-colors duration-300 hover:bg-amp-gold hover:text-amp-wine"
           >
             Preencher formulário
           </a>

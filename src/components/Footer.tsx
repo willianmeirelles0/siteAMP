@@ -3,6 +3,12 @@ import Logo from "./Logo";
 import { navLinks, siteConfig, whatsappHref } from "@/lib/site-config";
 import { IconInstagram, IconLinkedin, IconMail } from "./icons";
 
+// No rodapé o slogan aparece sem os marcadores "•" usados no Hero.
+const footerSlogan = `${siteConfig.slogan
+  .split("•")
+  .map((parte) => parte.trim())
+  .join(". ")}.`;
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -13,7 +19,7 @@ export default function Footer() {
           <div>
             <Logo variant="light" />
             <p className="mt-5 max-w-xs font-sans text-sm font-light leading-relaxed text-amp-cream/65">
-              {siteConfig.slogan}
+              {footerSlogan}
             </p>
           </div>
 
@@ -71,8 +77,8 @@ export default function Footer() {
                 href={siteConfig.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram da AMP Andrioli"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-amp-cream/25 text-amp-cream transition-colors duration-300 hover:border-amp-sand hover:text-amp-sand"
+                aria-label="Instagram da AMP"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-amp-gold/70 text-amp-cream transition-colors duration-300 hover:border-amp-gold hover:text-amp-gold"
               >
                 <IconInstagram className="h-4 w-4" />
               </a>
@@ -80,8 +86,8 @@ export default function Footer() {
                 href={siteConfig.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn da AMP Andrioli"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-amp-cream/25 text-amp-cream transition-colors duration-300 hover:border-amp-sand hover:text-amp-sand"
+                aria-label="LinkedIn da AMP"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-amp-gold/70 text-amp-cream transition-colors duration-300 hover:border-amp-gold hover:text-amp-gold"
               >
                 <IconLinkedin className="h-4 w-4" />
               </a>

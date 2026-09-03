@@ -19,9 +19,9 @@ type Depoimento = {
  * public/images e preencher `src` de cada item abaixo.
  */
 const depoimentos: Depoimento[] = [
-  { tipo: "video", nome: "Cliente AMP Andrioli", empresa: "Empresa, substituir" },
-  { tipo: "video", nome: "Cliente AMP Andrioli", empresa: "Empresa, substituir" },
-  { tipo: "video", nome: "Cliente AMP Andrioli", empresa: "Empresa, substituir" },
+  { tipo: "video", nome: "Cliente AMP", empresa: "Empresa, substituir" },
+  { tipo: "video", nome: "Cliente AMP", empresa: "Empresa, substituir" },
+  { tipo: "video", nome: "Cliente AMP", empresa: "Empresa, substituir" },
 ];
 
 export default function Depoimentos() {
@@ -54,7 +54,7 @@ export default function Depoimentos() {
             Depoimentos
           </span>
           <h2 className="mt-4 font-display text-3xl font-medium text-amp-cream sm:text-4xl">
-            Marcas que confiam na AMP Andrioli
+            Marcas que confiam na AMP
           </h2>
         </Reveal>
 
@@ -63,7 +63,7 @@ export default function Depoimentos() {
             type="button"
             onClick={() => goTo(index - 1)}
             aria-label="Depoimento anterior"
-            className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border border-amp-cream/30 text-amp-cream transition-colors duration-300 hover:border-amp-sand hover:text-amp-sand sm:flex"
+            className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border border-amp-gold/60 text-amp-cream transition-colors duration-300 hover:border-amp-gold hover:text-amp-gold sm:flex"
           >
             <IconChevronLeft className="h-4 w-4" />
           </button>
@@ -92,8 +92,8 @@ export default function Depoimentos() {
                     <img src={atual.src} alt={`Depoimento de ${atual.nome}`} className="h-full w-full object-cover" />
                   )
                 ) : (
-                  <div className="flex h-full w-full flex-col items-center justify-center gap-3 border border-amp-cream/20 bg-amp-cream/[0.05] px-6 text-center">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full border border-amp-sand/50 text-amp-sand">
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-3 border border-amp-gold/40 bg-amp-cream/[0.05] px-6 text-center">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full border border-amp-gold text-amp-gold">
                       <IconPlay className="h-5 w-5" />
                     </span>
                     <span className="font-sans text-xs uppercase tracking-widest2 text-amp-cream/50">
@@ -118,7 +118,7 @@ export default function Depoimentos() {
             type="button"
             onClick={() => goTo(index + 1)}
             aria-label="Próximo depoimento"
-            className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border border-amp-cream/30 text-amp-cream transition-colors duration-300 hover:border-amp-sand hover:text-amp-sand sm:flex"
+            className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border border-amp-gold/60 text-amp-cream transition-colors duration-300 hover:border-amp-gold hover:text-amp-gold sm:flex"
           >
             <IconChevronRight className="h-4 w-4" />
           </button>
@@ -132,7 +132,7 @@ export default function Depoimentos() {
               onClick={() => goTo(i)}
               aria-label={`Ir para depoimento ${i + 1}`}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === index ? "w-6 bg-amp-sand" : "w-1.5 bg-amp-cream/30"
+                i === index ? "w-6 bg-amp-gold" : "w-1.5 bg-amp-cream/30"
               }`}
             />
           ))}

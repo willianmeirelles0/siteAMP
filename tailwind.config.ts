@@ -13,15 +13,18 @@ const config: Config = {
     extend: {
       colors: {
         amp: {
-          // Bordô/vinho profundo, cor de fundo dominante
-          wine: "#5A1420",
-          "wine-dark": "#3D0E16",
-          "wine-light": "#71202D",
+          // Bordô/vinho profundo, cor de fundo dominante (fixa, sem variação por seção)
+          wine: "#3B0408",
+          "wine-dark": "#280205",
+          "wine-light": "#4E0A10",
           // Off-white — texto sobre fundo escuro
           cream: "#F8F5F1",
-          // Bege — acentos e detalhes
+          // Bege — acentos e detalhes de texto
           sand: "#E5D2BF",
           "sand-dark": "#D3B99E",
+          // Dourado — molduras e botões vazados (somente bordas)
+          gold: "#C9A227",
+          "gold-dark": "#A9861D",
           // Quase-preto — texto sobre fundo claro
           ink: "#1F1F1F",
         },

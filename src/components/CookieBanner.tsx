@@ -15,7 +15,7 @@ export default function CookieBanner() {
   if (!hydrated || consent !== null) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[60] border-t border-amp-sand/40 bg-amp-wine px-5 py-6 shadow-[0_-4px_20px_rgba(0,0,0,0.15)] sm:px-8">
+    <div className="fixed inset-x-0 bottom-0 z-[60] border-t border-amp-gold/40 bg-amp-wine px-5 py-6 shadow-[0_-4px_20px_rgba(0,0,0,0.15)] sm:px-8">
       <div className="mx-auto max-w-content">
         {!showPreferences ? (
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
@@ -33,21 +33,21 @@ export default function CookieBanner() {
               <button
                 type="button"
                 onClick={() => setShowPreferences(true)}
-                className="rounded-full border border-amp-cream/40 px-5 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-cream transition-colors duration-300 hover:border-amp-cream"
+                className="rounded-full border border-amp-gold px-5 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-cream transition-colors duration-300 hover:bg-amp-gold hover:text-amp-wine"
               >
                 Preferências
               </button>
               <button
                 type="button"
                 onClick={() => setConsent(CONSENT_ESSENTIAL_ONLY)}
-                className="rounded-full border border-amp-cream/40 px-5 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-cream transition-colors duration-300 hover:border-amp-cream"
+                className="rounded-full border border-amp-gold px-5 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-cream transition-colors duration-300 hover:bg-amp-gold hover:text-amp-wine"
               >
                 Recusar não essenciais
               </button>
               <button
                 type="button"
                 onClick={() => setConsent(CONSENT_ALL)}
-                className="rounded-full bg-amp-sand px-5 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-wine transition-colors duration-300 hover:bg-amp-cream"
+                className="rounded-full border border-amp-gold px-5 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-cream transition-colors duration-300 hover:bg-amp-gold hover:text-amp-wine"
               >
                 Aceitar todos
               </button>
@@ -89,7 +89,7 @@ export default function CookieBanner() {
               <button
                 type="button"
                 onClick={() => setShowPreferences(false)}
-                className="rounded-full border border-amp-cream/40 px-5 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-cream transition-colors duration-300 hover:border-amp-cream"
+                className="rounded-full border border-amp-gold px-5 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-cream transition-colors duration-300 hover:bg-amp-gold hover:text-amp-wine"
               >
                 Voltar
               </button>
@@ -102,7 +102,7 @@ export default function CookieBanner() {
                     marketing: marketingChoice,
                   })
                 }
-                className="rounded-full bg-amp-sand px-5 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-wine transition-colors duration-300 hover:bg-amp-cream"
+                className="rounded-full border border-amp-gold px-5 py-2.5 text-xs font-medium uppercase tracking-widest2 text-amp-cream transition-colors duration-300 hover:bg-amp-gold hover:text-amp-wine"
               >
                 Salvar preferências
               </button>
@@ -128,7 +128,7 @@ function PreferenceToggle({
   onChange?: (value: boolean) => void;
 }) {
   return (
-    <div className="rounded-sm border border-amp-cream/15 bg-amp-cream/[0.04] p-4">
+    <div className="rounded-sm border border-amp-gold/30 bg-amp-cream/[0.04] p-4">
       <div className="flex items-center justify-between gap-3">
         <span className="font-sans text-sm font-medium text-amp-cream">{label}</span>
         <button
@@ -140,7 +140,7 @@ function PreferenceToggle({
           onClick={() => onChange?.(!checked)}
           className={clsx(
             "relative h-5 w-9 shrink-0 rounded-full transition-colors duration-300",
-            checked ? "bg-amp-sand" : "bg-amp-cream/25",
+            checked ? "bg-amp-gold" : "bg-amp-cream/25",
             disabled && "cursor-not-allowed opacity-70",
           )}
         >

@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --amp-wine: #5a1420;
+  --amp-wine: #3b0408;
   --amp-cream: #f8f5f1;
   --amp-sand: #e5d2bf;
+  --amp-gold: #c9a227;
   --amp-ink: #1f1f1f;
 }
 

@@ -3,7 +3,7 @@ import { privacySections, privacyLastUpdated } from "@/lib/privacy-content";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade",
-  description: "Política de Privacidade e proteção de dados (LGPD) da AMP Andrioli, Marketing & Performance.",
+  description: "Política de Privacidade e proteção de dados (LGPD) da Andrioli Marketing & Performance.",
 };
 
 export default function PrivacidadePage() {

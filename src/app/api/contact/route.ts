@@ -78,7 +78,7 @@ export async function POST(request: Request) {
   //   import { Resend } from "resend";
   //   const resend = new Resend(process.env.RESEND_API_KEY);
   //   await resend.emails.send({
-  //     from: "AMP Andrioli <contato@ampandrioli.com.br>",
+  //     from: "AMP <contato@ampandrioli.com.br>",
   //     to: process.env.CONTACT_TO_EMAIL!,
   //     replyTo: data.email,
   //     subject: `Novo contato pelo site — ${data.nome}`,

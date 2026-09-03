@@ -57,8 +57,8 @@ export default function Servicos() {
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {servicos.map((servico, index) => (
             <Reveal key={servico.titulo} delay={index * 0.1}>
-              <div className="flex h-full flex-col items-start rounded-sm border border-amp-wine/10 bg-white/60 p-8 transition-colors duration-300 hover:border-amp-wine/30">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-amp-wine/30 text-amp-wine">
+              <div className="flex h-full flex-col items-start rounded-sm border border-amp-gold/40 bg-white/60 p-8 transition-colors duration-300 hover:border-amp-gold">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-amp-gold text-amp-wine">
                   <servico.icon className="h-5 w-5" />
                 </span>
                 <h3 className="mt-6 font-display text-xl font-medium text-amp-ink">
@@ -75,7 +75,7 @@ export default function Servicos() {
         <Reveal delay={0.2} className="mt-6">
           <div className="flex flex-col items-start gap-6 rounded-sm bg-amp-wine p-8 sm:p-10 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-start gap-5">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amp-sand/50 text-amp-sand">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amp-gold text-amp-gold">
                 <consultoria.icon className="h-5 w-5" />
               </span>
               <div>
@@ -90,7 +90,7 @@ export default function Servicos() {
             <WhatsappButton
               variant="outline"
               className="shrink-0"
-              message="Olá! Gostaria de saber mais sobre a Consultoria Estratégica da AMP Andrioli."
+              message="Olá! Gostaria de saber mais sobre a Consultoria Estratégica da AMP."
             >
               Falar sobre consultoria
             </WhatsappButton>

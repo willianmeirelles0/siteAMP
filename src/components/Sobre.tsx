@@ -7,8 +7,10 @@ import Reveal from "./Reveal";
 const fundadora = {
   nome: "Jéssica Andrioli",
   cargo: "Fundadora & Diretora de Estratégia",
-  bio: [
+  introducao:
     "Com uma trajetória de 6 anos dedicada ao marketing e à construção de marcas, Jéssica Andrioli fundou a AMP para unir estratégia, posicionamento e performance em um só lugar, sem abrir mão da sensibilidade que toda marca merece.",
+  /** Fala em primeira pessoa, exibida em itálico e entre aspas. */
+  fala: [
     "Acredito em um marketing que vai além da comunicação: une estratégia, posicionamento, relacionamento e performance para construir marcas que sejam percebidas, desejadas e escolhidas.",
     "O que me move é ver empresas evoluírem, empreendedores ganharem clareza e o conhecimento se transformar em resultados reais.",
     "Sou determinada, inquieta e apaixonada por evolução. Valorizo conexões genuínas, aprendizado contínuo e a coragem de transformar desafios em novas possibilidades.",
@@ -23,7 +25,7 @@ export default function Sobre() {
     <section id="sobre" className="bg-amp-cream py-24 sm:py-32">
       <div className="mx-auto grid max-w-content grid-cols-1 items-start gap-14 px-6 sm:px-8 lg:grid-cols-2 lg:gap-20">
         <Reveal className="lg:sticky lg:top-32">
-          <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-sm border border-amp-wine/15 bg-amp-sand/40 sm:max-w-md">
+          <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-sm border border-amp-gold/50 bg-amp-sand/40 sm:max-w-md">
             {/* Placeholder até a foto real ser adicionada em public/images */}
             <div className="flex h-full w-full flex-col items-center justify-center gap-3 px-6 text-center">
               <span className="font-script text-4xl text-amp-wine/70">Jéssica</span>
@@ -31,7 +33,7 @@ export default function Sobre() {
                 Foto da fundadora, substituir em public/images
               </span>
             </div>
-            <div className="pointer-events-none absolute inset-3 border border-amp-sand" />
+            <div className="pointer-events-none absolute inset-3 border border-amp-gold" />
           </div>
         </Reveal>
 
@@ -40,9 +42,17 @@ export default function Sobre() {
             {fundadora.cargo}
           </h2>
 
-          <div className="mt-6 space-y-4 font-sans text-base font-light leading-relaxed text-amp-ink/80">
-            {fundadora.bio.map((paragrafo) => (
-              <p key={paragrafo.slice(0, 24)}>{paragrafo}</p>
+          <p className="mt-6 font-sans text-base font-light leading-relaxed text-amp-ink/80">
+            {fundadora.introducao}
+          </p>
+
+          <div className="mt-6 space-y-4 font-display text-base italic leading-relaxed text-amp-ink/80">
+            {fundadora.fala.map((paragrafo, index) => (
+              <p key={paragrafo.slice(0, 24)}>
+                {index === 0 && "“"}
+                {paragrafo}
+                {index === fundadora.fala.length - 1 && "”"}
+              </p>
             ))}
           </div>
 

@@ -5,10 +5,12 @@ import { whatsappHref } from "@/lib/site-config";
 
 type WhatsappButtonProps = {
   /**
-   * "solid": bege sobre fundo bordô (padrão, ex. Hero/Header).
-   * "dark": bordô sobre fundo claro (ex. seções com fundo bege/off-white).
-   * "outline": contorno claro, usado sobre fundo bordô.
-   * "fab": botão flutuante fixo.
+   * Todos os botões (exceto "fab") são vazados: fundo transparente,
+   * apenas borda dourada, preenchendo de dourado só no hover.
+   * "solid": texto dourado, usado sobre fundo bordô (padrão, ex. Hero/Header).
+   * "dark": texto bordô, usado sobre fundo claro (seções bege/off-white).
+   * "outline": texto creme, variante secundária sobre fundo bordô.
+   * "fab": botão flutuante fixo (mantém o verde do WhatsApp).
    */
   variant?: "solid" | "dark" | "outline" | "fab";
   message?: string;
@@ -55,11 +57,10 @@ export default function WhatsappButton({
       target="_blank"
       rel="noopener noreferrer"
       className={clsx(
-        "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-300",
-        variant === "outline" &&
-          "border border-amp-cream/70 text-amp-cream hover:bg-amp-cream hover:text-amp-wine",
-        variant === "dark" && "bg-amp-wine text-amp-cream hover:bg-amp-wine-dark",
-        variant === "solid" && "bg-amp-sand text-amp-wine hover:bg-amp-cream",
+        "inline-flex items-center justify-center gap-2 rounded-full border border-amp-gold bg-transparent px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-300 hover:bg-amp-gold hover:text-amp-wine",
+        variant === "outline" && "text-amp-cream",
+        variant === "dark" && "text-amp-wine",
+        variant === "solid" && "text-amp-gold",
         className,
       )}
     >
