@@ -30,8 +30,11 @@ src/
     Logo.tsx            # monograma "AMP" + wordmark "ANDRIOLI"
     Header.tsx           # header fixo, menu mobile em tela cheia
     Hero.tsx              # seção hero
-    WhatsappButton.tsx     # botão reutilizável (solid/outline/fab)
-    Reveal.tsx               # wrapper de fade-in ao entrar no viewport
+    Sobre.tsx              # seção "Sobre a fundadora"
+    SobreAmp.tsx             # seção "Sobre a AMP Andrioli" (missão + pilares)
+    icons.tsx                 # ícones de traço fino usados nos cards
+    WhatsappButton.tsx          # botão reutilizável (solid/outline/fab)
+    Reveal.tsx                   # wrapper de fade-in ao entrar no viewport
   lib/
     fonts.ts             # configuração das fontes do Google
     site-config.ts         # dados centrais editáveis (WhatsApp, redes, nav)
@@ -41,12 +44,14 @@ src/
 
 - `src/lib/site-config.ts`: número de WhatsApp, e-mail, Instagram, LinkedIn, URL do site.
 - `tailwind.config.ts`: cores (`amp.wine`, `amp.cream`, `amp.sand`, `amp.ink`) e fontes.
+- `src/components/Sobre.tsx`: bio da fundadora (objeto `fundadora` no topo do arquivo) e foto — adicionar em `public/images` e trocar o bloco placeholder por `<Image />`.
+- `src/components/SobreAmp.tsx`: texto de missão (`missao`) e os 3-4 pilares/diferenciais (`pilares`).
 
 ## Progresso
 
 - [x] Estrutura de pastas, Tailwind config (paleta/tipografia), Header, Hero
-- [ ] Sobre a fundadora
-- [ ] Sobre a AMP Andrioli (missão + pilares)
+- [x] Sobre a fundadora
+- [x] Sobre a AMP Andrioli (missão + pilares)
 - [ ] Serviços
 - [ ] Mentoria de Marketing
 - [ ] Depoimentos
