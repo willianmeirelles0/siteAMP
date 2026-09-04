@@ -17,7 +17,8 @@ import { whatsappHref } from "@/lib/site-config";
 const inputClass =
   "w-full rounded-sm border border-amp-gold/40 bg-white/70 px-4 py-3 font-sans text-sm text-amp-ink placeholder:text-amp-ink/35 outline-none transition-colors duration-300 focus:border-amp-gold";
 
-const labelClass = "block font-sans text-xs uppercase tracking-widest2 text-amp-wine/70 mb-2";
+const labelClass = "block font-sans text-xs uppercase tracking-widest2 text-amp-sand mb-2";
+const errorClass = "text-xs text-red-300";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -139,7 +140,7 @@ export default function ContatoForm() {
             className={inputClass}
             placeholder="Seu nome completo"
           />
-          {errors.nome && <p className="mt-2 text-xs text-amp-wine">{errors.nome}</p>}
+          {errors.nome && <p className={clsx("mt-2", errorClass)}>{errors.nome}</p>}
         </div>
 
         <div>
@@ -155,7 +156,7 @@ export default function ContatoForm() {
             className={inputClass}
             placeholder="seu@email.com"
           />
-          {errors.email && <p className="mt-2 text-xs text-amp-wine">{errors.email}</p>}
+          {errors.email && <p className={clsx("mt-2", errorClass)}>{errors.email}</p>}
         </div>
 
         <div>
@@ -171,7 +172,7 @@ export default function ContatoForm() {
             className={inputClass}
             placeholder="(11) 99999-9999"
           />
-          {errors.telefone && <p className="mt-2 text-xs text-amp-wine">{errors.telefone}</p>}
+          {errors.telefone && <p className={clsx("mt-2", errorClass)}>{errors.telefone}</p>}
         </div>
 
         <div>
@@ -195,7 +196,7 @@ export default function ContatoForm() {
           {OPCOES_INTERESSE.map((opcao) => (
             <label
               key={opcao.value}
-              className="flex cursor-pointer items-center gap-3 font-sans text-sm text-amp-ink"
+              className="flex cursor-pointer items-center gap-3 font-sans text-sm text-amp-cream"
             >
               <input
                 type="radio"
@@ -209,10 +210,10 @@ export default function ContatoForm() {
             </label>
           ))}
         </div>
-        {errors.interesse && <p className="mt-2 text-xs text-amp-wine">{errors.interesse}</p>}
+        {errors.interesse && <p className={clsx("mt-2", errorClass)}>{errors.interesse}</p>}
 
         {values.interesse === "servicos_pontuais" && (
-          <div className="mt-4 grid grid-cols-1 gap-3 rounded-sm border border-amp-gold/30 bg-white/50 p-5 sm:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-3 rounded-sm border border-amp-gold/30 bg-amp-cream/95 p-5 sm:grid-cols-2">
             {SERVICOS_PONTUAIS.map((servico) => (
               <label
                 key={servico.value}
@@ -249,7 +250,7 @@ export default function ContatoForm() {
       </div>
 
       <div>
-        <label className="flex cursor-pointer items-start gap-3 font-sans text-sm text-amp-ink/85">
+        <label className="flex cursor-pointer items-start gap-3 font-sans text-sm text-amp-cream/85">
           <input
             type="checkbox"
             required
@@ -259,21 +260,21 @@ export default function ContatoForm() {
           />
           <span>
             Li e aceito os termos e a{" "}
-            <Link href="/privacidade" className="underline underline-offset-2 hover:text-amp-wine" target="_blank">
+            <Link href="/privacidade" className="underline underline-offset-2 hover:text-amp-gold" target="_blank">
               Política de Privacidade
             </Link>
             . *
           </span>
         </label>
-        {errors.aceite && <p className="mt-2 text-xs text-amp-wine">{errors.aceite}</p>}
+        {errors.aceite && <p className={clsx("mt-2", errorClass)}>{errors.aceite}</p>}
       </div>
 
-      {errors.form && <p className="text-sm text-amp-wine">{errors.form}</p>}
+      {errors.form && <p className={clsx("text-sm", errorClass)}>{errors.form}</p>}
 
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full rounded-full border border-amp-gold bg-transparent px-6 py-3.5 text-sm font-medium uppercase tracking-widest2 text-amp-wine transition-colors duration-300 hover:bg-amp-gold disabled:opacity-60 sm:w-auto"
+        className="w-full rounded-full border border-amp-gold bg-transparent px-6 py-3.5 text-sm font-medium uppercase tracking-widest2 text-amp-gold transition-colors duration-300 hover:bg-amp-gold hover:text-amp-wine disabled:opacity-60 sm:w-auto"
       >
         {status === "submitting" ? "Enviando..." : "Enviar para o WhatsApp"}
       </button>

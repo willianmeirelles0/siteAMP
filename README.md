@@ -30,15 +30,16 @@ src/
     privacidade/page.tsx        # Política de Privacidade (LGPD)
     api/contact/route.ts         # Route Handler do formulário de contato
   components/
-    Logo.tsx                # monograma "AMP" + wordmark "ANDRIOLI"
+    Logo.tsx                # marca (public/images/logo-wordmark.png) usada no Header/Footer
     Header.tsx               # header fixo, menu mobile em tela cheia
-    Hero.tsx                  # seção hero
+    Hero.tsx                  # seção hero (com o monograma logo-amp.png no topo)
     Sobre.tsx                  # seção "Sobre a fundadora"
     SobreAmp.tsx                 # seção "Sobre a Andrioli Marketing & Performance" (missão + pilares)
     Servicos.tsx                   # seção "Serviços" (grid de cards + consultoria em destaque)
-    Mentoria.tsx                     # seção "Mentoria de Marketing" (fundo bege)
-    Depoimentos.tsx                    # carrossel de depoimentos
-    Contato.tsx / ContatoForm.tsx        # seção de contato + formulário completo
+    Mentoria.tsx                     # seção "Mentoria de Marketing" (fundo bordô)
+    Depoimentos.tsx                    # carrossel de depoimentos (fundo bordô)
+    Videos.tsx                          # seção "Vídeos" (grid de espaços para links do YouTube)
+    Contato.tsx / ContatoForm.tsx        # seção de contato (fundo bordô) + formulário completo
     Footer.tsx                             # rodapé (nav, contato, redes, link /privacidade)
     CookieConsentContext.tsx                 # estado de consentimento (localStorage)
     CookieBanner.tsx                           # banner LGPD (aceitar/recusar/preferências)
@@ -56,13 +57,14 @@ src/
 
 ## Configuração rápida (placeholders a editar)
 
-- `src/lib/site-config.ts`: número de WhatsApp, e-mail, Instagram, LinkedIn, URL do site.
+- `src/lib/site-config.ts`: número de WhatsApp, e-mail, Instagram, CNPJ, URL do site.
 - `tailwind.config.ts`: cores (`amp.wine` #3B0408 fixo em todas as seções, `amp.gold` para molduras/botões vazados, `amp.cream`, `amp.sand`, `amp.ink`) e fontes. Nomes usados no site: apenas "AMP" ou "Andrioli Marketing & Performance" (nunca "AMP Andrioli" combinados) — ver `siteConfig.name`/`siteConfig.fullName`.
 - `src/components/Sobre.tsx`: bio da fundadora (objeto `fundadora` no topo do arquivo) e foto, adicionar em `public/images` e trocar o bloco placeholder por `<Image />`.
 - `src/components/SobreAmp.tsx`: texto de missão (`missao`) e os 3-4 pilares/diferenciais (`pilares`).
 - `src/components/Servicos.tsx`: lista `servicos` e o serviço em destaque `consultoria`. Ao alterar, atualizar também `SERVICOS_PONTUAIS` em `src/lib/contact.ts` para manter o formulário de contato sincronizado.
 - `src/components/Mentoria.tsx`: entregáveis por categoria (`categorias`), badges (`duracao`/`cadencia`) e foto, adicionar em `public/images` e trocar o bloco placeholder por `<Image />`.
 - `src/components/Depoimentos.tsx`: array `depoimentos` (formato vertical 1080x1920). Adicionar os arquivos em `public/videos` ou `public/images` e preencher o campo `src` de cada item.
+- `src/components/Videos.tsx`: array `videos`, cada item com `titulo`/`categoria`/`cliente` e o campo `youtubeUrl` a preencher quando os vídeos forem publicados no YouTube. Enquanto vazio, o card fica com um placeholder "Adicionar link do YouTube".
 - `src/lib/privacy-content.ts`: texto-base da Política de Privacidade, **revisar com jurídico especializado em LGPD** antes de publicar; preencher os campos entre `[colchetes]` (razão social, CNPJ, e-mail do encarregado/DPO, data de atualização).
 
 ## Integrações pendentes
@@ -79,6 +81,7 @@ src/
 - [x] Serviços
 - [x] Mentoria de Marketing
 - [x] Depoimentos
+- [x] Vídeos (espaços prontos, aguardando links do YouTube)
 - [x] Contato (formulário + Route Handler `app/api/contact`)
 - [x] Footer
 - [x] Botão flutuante de WhatsApp global
