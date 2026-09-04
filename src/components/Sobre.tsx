@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
 
 /**
@@ -26,13 +27,14 @@ export default function Sobre() {
       <div className="mx-auto grid max-w-content grid-cols-1 items-start gap-14 px-6 sm:px-8 lg:grid-cols-2 lg:gap-20">
         <Reveal className="lg:sticky lg:top-32">
           <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-sm border border-amp-gold/50 bg-amp-sand/40 sm:max-w-md">
-            {/* Placeholder até a foto real ser adicionada em public/images */}
-            <div className="flex h-full w-full flex-col items-center justify-center gap-3 px-6 text-center">
-              <span className="font-script text-4xl text-amp-wine/70">Jéssica</span>
-              <span className="font-sans text-xs uppercase tracking-widest2 text-amp-wine/50">
-                Foto da fundadora, substituir em public/images
-              </span>
-            </div>
+            <Image
+              src="/images/fundadora.jpg"
+              alt={fundadora.nome}
+              fill
+              sizes="(min-width: 768px) 448px, 384px"
+              className="object-cover"
+              priority
+            />
             <div className="pointer-events-none absolute inset-3 border border-amp-gold" />
           </div>
         </Reveal>

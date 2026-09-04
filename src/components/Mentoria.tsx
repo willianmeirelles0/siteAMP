@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
 import WhatsappButton from "./WhatsappButton";
 import { IconCheck, IconCompass, IconMegaphone, IconFeather, IconChart } from "./icons";
@@ -100,13 +101,13 @@ export default function Mentoria() {
 
           <Reveal delay={0.15}>
             <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-sm border border-amp-gold/50 bg-amp-cream sm:max-w-md">
-              {/* Placeholder até a foto real ser adicionada em public/images */}
-              <div className="flex h-full w-full flex-col items-center justify-center gap-3 px-6 text-center">
-                <span className="font-script text-4xl text-amp-wine/70">Jéssica</span>
-                <span className="font-sans text-xs uppercase tracking-widest2 text-amp-wine/50">
-                  Foto da mentoria, substituir em public/images
-                </span>
-              </div>
+              <Image
+                src="/images/mentoria.jpg"
+                alt="Mentoria de Marketing com Jéssica Andrioli"
+                fill
+                sizes="(min-width: 768px) 448px, 384px"
+                className="object-cover"
+              />
               <div className="pointer-events-none absolute inset-3 border border-amp-gold" />
             </div>
           </Reveal>

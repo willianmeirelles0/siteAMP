@@ -17,7 +17,7 @@ export const privacySections: { titulo: string; paragrafos: string[] }[] = [
   {
     titulo: "2. Quem é o controlador dos dados",
     paragrafos: [
-      `A controladora dos dados pessoais tratados por meio deste site é a AMP, [inserir razão social], CNPJ ${siteConfig.cnpj}, com contato através do e-mail ${siteConfig.email}.`,
+      `A controladora dos dados pessoais tratados por meio deste site é a ANDRIOLI MARKETING E PERFORMANCE LTDA (AMP), CNPJ ${siteConfig.cnpj}, com contato através do e-mail ${siteConfig.email}.`,
     ],
   },
   {

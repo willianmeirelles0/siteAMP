@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="mx-auto max-w-content px-6 sm:px-8">
         <div className="grid grid-cols-1 gap-12 pb-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Logo variant="light" />
+            <Logo />
             <p className="mt-5 max-w-xs font-sans text-sm font-light leading-relaxed text-amp-cream/65">
               {footerSlogan}
             </p>

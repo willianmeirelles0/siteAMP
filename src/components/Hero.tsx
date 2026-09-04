@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import WhatsappButton from "./WhatsappButton";
 import { siteConfig } from "@/lib/site-config";
@@ -22,10 +23,26 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto flex max-w-content flex-col items-center px-6 py-20 text-center sm:px-8">
-        <motion.span
+        <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
+          className="mb-6"
+        >
+          <Image
+            src="/images/logo-amp.png"
+            alt="AMP"
+            width={900}
+            height={668}
+            priority
+            className="h-20 w-auto sm:h-24"
+          />
+        </motion.div>
+
+        <motion.span
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
           className="mb-6 font-sans text-xs uppercase tracking-widest2 text-amp-sand"
         >
           Marketing &amp; Performance

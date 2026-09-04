@@ -38,7 +38,7 @@ export default function Header() {
         )}
       >
         <div className="mx-auto flex max-w-content items-center justify-between px-5 py-3 sm:px-8">
-          <Logo variant="light" />
+          <Logo priority />
 
           <nav className="hidden items-center gap-8 lg:flex">
             {navLinks.map((link) => (
