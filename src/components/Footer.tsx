@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { navLinks, siteConfig, whatsappHref } from "@/lib/site-config";
-import { IconInstagram, IconLinkedin, IconMail } from "./icons";
+import { IconInstagram, IconMail } from "./icons";
 
 // No rodapé o slogan aparece sem os marcadores "•" usados no Hero.
 const footerSlogan = `${siteConfig.slogan
@@ -82,22 +82,13 @@ export default function Footer() {
               >
                 <IconInstagram className="h-4 w-4" />
               </a>
-              <a
-                href={siteConfig.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn da AMP"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-amp-gold/70 text-amp-cream transition-colors duration-300 hover:border-amp-gold hover:text-amp-gold"
-              >
-                <IconLinkedin className="h-4 w-4" />
-              </a>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-amp-cream/10 py-6 text-center sm:flex-row sm:text-left">
           <p className="font-sans text-xs text-amp-cream/50">
-            © {year} {siteConfig.fullName}. Todos os direitos reservados.
+            © {year} {siteConfig.fullName}. CNPJ {siteConfig.cnpj}. Todos os direitos reservados.
           </p>
           <Link
             href="/privacidade"

@@ -6,12 +6,11 @@ export const siteConfig = {
   name: "AMP",
   fullName: "Andrioli Marketing & Performance",
   slogan: "Conteúdo constrói relacionamentos • Relacionamento gera confiança • Confiança gera receita",
-  // TODO: substituir pelo número real em formato internacional, ex. "5511999999999"
-  whatsappNumber: "5511999999999",
+  whatsappNumber: "5551998283775",
   whatsappMessage: "Olá! Gostaria de saber mais sobre os serviços da AMP.",
-  email: "contato@ampandrioli.com.br",
-  instagram: "https://instagram.com/ampandrioli",
-  linkedin: "https://linkedin.com/company/ampandrioli",
+  email: "andriolimarketing@gmail.com",
+  instagram: "https://www.instagram.com/andrioli.marketing?igsi=Nzl1d3lwb2V5NWNs",
+  cnpj: "47.876.520/0001-26",
   siteUrl: "https://www.ampandrioli.com.br",
 };
 

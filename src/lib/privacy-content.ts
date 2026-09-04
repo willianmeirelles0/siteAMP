@@ -1,3 +1,5 @@
+import { siteConfig } from "@/lib/site-config";
+
 /**
  * Conteúdo-base da Política de Privacidade / LGPD.
  * TODO: revisar com um profissional jurídico especializado em LGPD
@@ -15,7 +17,7 @@ export const privacySections: { titulo: string; paragrafos: string[] }[] = [
   {
     titulo: "2. Quem é o controlador dos dados",
     paragrafos: [
-      "A controladora dos dados pessoais tratados por meio deste site é a AMP, [inserir razão social e CNPJ], com contato através do e-mail [inserir e-mail do encarregado/DPO].",
+      `A controladora dos dados pessoais tratados por meio deste site é a AMP, [inserir razão social], CNPJ ${siteConfig.cnpj}, com contato através do e-mail ${siteConfig.email}.`,
     ],
   },
   {
@@ -64,7 +66,7 @@ export const privacySections: { titulo: string; paragrafos: string[] }[] = [
     titulo: "9. Seus direitos como titular de dados",
     paragrafos: [
       "Nos termos do art. 18 da LGPD, você pode solicitar, a qualquer momento: confirmação da existência de tratamento; acesso aos dados; correção de dados incompletos, inexatos ou desatualizados; anonimização, bloqueio ou eliminação de dados desnecessários; portabilidade dos dados; eliminação dos dados tratados com base no consentimento; informação sobre compartilhamento de dados; e revogação do consentimento.",
-      "Para exercer esses direitos, entre em contato através do e-mail [inserir e-mail do encarregado/DPO].",
+      `Para exercer esses direitos, entre em contato através do e-mail ${siteConfig.email}.`,
     ],
   },
   {
@@ -76,7 +78,7 @@ export const privacySections: { titulo: string; paragrafos: string[] }[] = [
   {
     titulo: "11. Contato",
     paragrafos: [
-      "Em caso de dúvidas sobre esta Política de Privacidade ou sobre o tratamento dos seus dados pessoais, entre em contato pelo e-mail [inserir e-mail do encarregado/DPO] ou pelos canais indicados na seção de Contato deste site.",
+      `Em caso de dúvidas sobre esta Política de Privacidade ou sobre o tratamento dos seus dados pessoais, entre em contato pelo e-mail ${siteConfig.email} ou pelos canais indicados na seção de Contato deste site.`,
     ],
   },
 ];
